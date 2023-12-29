@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events Demo</title>
+    <style>
+        #demo-box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="demo-box">Click me!</div>
+<script>
+    var box = document.getElementById('demo-box');
+    function handleClick() {
+        box.style.backgroundColor = 'lightgreen';
+        box.innerHTML = 'Clicked!';
+    }
+
+    
+    function handleDoubleClick() {
+        box.style.backgroundColor = 'lightcoral';
+        box.innerHTML = 'Double Clicked!';
+    }
+
+    
+    function handleMouseOver() {
+        box.style.backgroundColor = 'lightsalmon';
+        box.innerHTML = 'Mouse Over!';
+    }
+
+
+    function handleMouseOut() {
+        box.style.backgroundColor = 'lightblue';
+        box.innerHTML = 'Mouse Out!';
+    }
+
+    
+    box.addEventListener('click', handleClick);
+    box.addEventListener('dblclick', handleDoubleClick);
+    box.addEventListener('mouseover', handleMouseOver);
+    box.addEventListener('mouseout', handleMouseOut);
+</script>
+
+</body>
+</html>

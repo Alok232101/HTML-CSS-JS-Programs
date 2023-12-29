@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPU WebPage</title>
+    <style>
+        .head
+        {
+            background-image: url("lpu2.jpeg");
+            text-align: center;
+            color: white;
+        }
+
+        .marquee 
+        {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: lightgray;
+        }
+
+        .marquee img 
+        {
+            display: inline-block;
+            margin-right: 100%;
+        
+            animation: marquee 10s linear infinite;
+        }
+        
+        .p
+        {
+        text-align: center;
+        font-weight: 400;
+        }
+
+        aside {
+            width: 15%;
+            padding-left: 15px;
+            margin-left: 15px;
+            float: right;
+            font-style: italic;
+            background-color: lightgray;
+        }
+
+        .footer
+        {
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <h1>Lovely Professional University</h1>
+        <marquee behavior="" direction="right"><img src="lpuimage.jpeg" alt="Image is not visible"></marquee>
+    </header>
+<br>
+<p class="p">
+    STUDENT REGISTRATION
+</p>
+
+</fieldset>
+<form action="">
+    
+    <fieldset>
+       
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" required><br><br>
+
+    <label for="fatherName">Father's Name:</label>
+    <input type="text" id="fatherName" name="fatherName" required><br><br>
+
+    <label for="motherName">Mother's Name:</label>
+    <input type="text" id="motherName" name="motherName" required><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <label for="level">Level:</label>
+    <select id="level" name="level" required>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+    </select><br><br>
+
+    <label for="department">Department:</label>
+    <select id="department" name="department" required>
+        <option value="engineering">Engineering</option>
+        <option value="business">Business</option>
+        <option value="arts">Arts</option>
+    </select><br><br>
+
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required>
+    <small>Enter a 10-digit mobile number.</small><br><br>
+
+
+</fieldset>
+<fieldset style="background-color: palegreen; ">
+    <h3>Permanent Address</h3><br>
+    <aside float="right">
+        <img src="download.jpg" alt="">
+    </aside>
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" required><br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
+
+    <label for="zip">Zip Code:</label>
+    <input type="text" id="zip" name="zip" required><br><br>
+    
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required>
+
+</fieldset>
+
+</fieldset>
+<form action="">       
+<fieldset style="background-color:yellow">
+    <h3>Temporary Address</h3><br>
+    <aside>
+        <img src="download (2).jpeg" alt="">
+    </aside>
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" required><br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
+
+    <label for="zip">Zip Code:</label>
+    <input type="text" id="zip" name="zip" required><br><br>
+    
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required>
+
+</fieldset>
+
+<fieldset style="background-color: palegreen;">
+    <table border="2px solid">
+        <tr>
+            <th>S.No</th>
+            <th>Examination</th>
+            <th>Board</th>
+            <th>Percentage</th>
+            <th>Year Of Passing</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Class X</td>
+            <td><input type="text" id="board1" name="board1"></td>
+            <td><input type="text" id="percentage1" name="percentage1"></td>
+            <td><input type="text" id="year1" name="year1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Class XII</td>
+            <td><input type="text" id="board2" name="board2"></td>
+            <td><input type="text" id="percentage2" name="percentage2"></td>
+            <td><input type="text" id="year2" name="year2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Graduation</td>
+            <td><input type="text" id="board3" name="board3"></td>
+            <td><input type="text" id="percentage3" name="percentage3"></td>
+            <td><input type="text" id="year3" name="year3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Masters</td>
+            <td><input type="text" id="board4" name="board4"></td>
+            <td><input type="text" id="percentage4" name="percentage4"></td>
+            <td><input type="text" id="year4" name="year4"></td>
+        </tr>
+    </table>
+</fieldset>
+<fieldset>
+<footer>
+<center>
+   <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</center>
+</footer>
+</fieldset>
+</form> 
+
+
+</body>
+</html>

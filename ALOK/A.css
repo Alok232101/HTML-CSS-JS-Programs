@@ -1,0 +1,25 @@
+p
+{
+    color: blue;
+    background-color:rgb(181, 235, 244);
+}
+label
+{
+   color:green;
+
+}
+h3
+{
+    color:black;
+    text-align: center;
+    font-style: italic;
+    
+}
+label
+{
+    background-color:bisque;
+}
+body
+{
+    background-color:bisque;
+}

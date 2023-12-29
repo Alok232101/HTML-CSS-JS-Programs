@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: rgb(231, 124, 231);
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Example of using session storage</h2>
+    <button onclick="counter();">click me</button><br><br>
+    <div id="output">See the result here:</div>
+    <script type="text/javascript">
+    function counter(){
+        if(sessionStorage.hits)
+        {
+            sessionStorage.hits=Number(sessionStorage.hits)+1;    
+        }
+        else
+        {
+            sessionStorage.hits=1;
+        }
+        document.getElementById('output').innerHTML = "You have clicked counter button for"+" "+sessionStorage.hits+" "+"times";
+    }
+    </script>
+    <p>Click the counter button to see the total counts.</p>
+    <p>Now, if you close the browser then it will reset to initial button.</p>
+</body>
+</html>

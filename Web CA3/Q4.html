@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Objects</title>
+    <style>
+      .animated-object 
+        {
+            position:absolute;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+
+        .circle 
+        {
+            border-radius: 50%;
+        }
+        .triangle 
+        {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 50px solid green;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="animated-object" id="square"></div>
+<div class="animated-object circle" id="circle"></div>
+<div class="animated-object triangle" id="triangle"></div>
+
+<script>
+ function animateObject(element, startX, startY, endX, endY) {
+        let positionX = startX;
+        let positionY = startY;
+        const step = 2;
+    function move() {
+            if ((positionX === endX) && (positionY === endY)) {
+                return; 
+            }
+
+            if (positionX < endX) {
+                positionX += step;
+            } else if (positionX > endX) {
+                positionX -= step;
+            }
+
+            if (positionY < endY) {
+                positionY += step;
+            } else if (positionY > endY) {
+                positionY -= step;
+            }
+
+            element.style.left = positionX + 'px';
+            element.style.top = positionY + 'px';
+
+            requestAnimationFrame(move);
+        }
+
+        move();
+    }
+    const square = document.getElementById('square');
+    const circle = document.getElementById('circle');
+    const triangle = document.getElementById('triangle');
+    animateObject(square, 50, 50, 300, 50);
+    animateObject(circle, 50, 150, 300, 150);
+    animateObject(triangle, 50, 250, 300, 250);
+</script>
+</body>
+</html>

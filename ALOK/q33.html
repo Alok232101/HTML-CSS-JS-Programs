@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calendar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      .calendar {
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+      }
+      .calendar__header {
+        padding: 10px;
+        background: #eee;
+        text-align: center;
+      }
+      .calendar__body {
+        border: 1px solid #ccc;
+      }
+      .calendar__day {
+        float: left;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      .calendar__day:last-child {
+        border-right: none;
+      }
+      .calendar__date {
+        cursor: pointer;
+      }
+      .calendar__date--today {
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calendar">
+      <div class="calendar__header"></div>
+      <div class="calendar__body"></div>
+    </div>
+    <script>
+      // Get current date
+      const date = new Date();
+      const today = date.getDate();
+
+      // Get month and year
+      const month = date.getMonth();
+      const year = date.getFullYear();
+
+      // Get days in current month
+      const daysInMonth = 32 - new Date(year, month, 32).getDate();
+
+      // Get day of the week for first day of the month
+      const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+      // Generate calendar header
+      const calendarHeader = document.querySelector('.calendar__header');
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      calendarHeader.innerHTML = `<h2>${months[month]} ${year}</h2>`;
+
+      // Generate calendar body
+      const calendarBody = document.querySelector('.calendar__body');
+      let calendarHtml = '';
+
+      // Create all days in the month
+      let dayCounter = 1;
+      for (let i = 0; i < 6; i++) {
+        let weekHtml = '';
+
+        // Create days for each week
+        for (let j = 0; j < 7; j++) {
+          if (dayCounter === 1 && j < firstDayOfMonth) {
+            weekHtml += '<div class="calendar__day"></div>';
+          } else if (dayCounter <= daysInMonth) {
+            if (dayCounter === today) {
+              weekHtml += `<div class="calendar_day"><div class="calendardate calendar_date--today">${dayCounter}</div></div>`;
+            } else {
+              weekHtml += `<div class="calendar_day"><div class="calendar_date">${dayCounter}</div></div>`;
+            }
+            dayCounter++;
+          } else {
+            weekHtml += '<div class="calendar__day"></div>';
+          }
+        }
+
+        // Add week to calendar HTML
+        calendarHtml += `<div class="calendar__week">${weekHtml}</div>`;
+      }
+
+      // Set calendar body HTML
+      calendarBody.innerHTML = calendarHtml;
+    </script>
+ </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Dashboard - Films</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .film-card {
+            border: 1px solid #090808;
+            border-radius: 4px;
+            padding: 40px;
+            background-color: #fff;
+        }
+        .film-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .film-poster {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .film-release-date {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body style= "background-color:rgb(0, 0, 50);">
+    <header>
+        <h1>Star Wars Dashboard - Films</h1>
+    </header>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+       <div>Films</div> 
+      </button>
+      <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+       <div>Peoples</div>
+      </button>
+      </div>
+      <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Species
+      </button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Plants
+      </button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Planets
+      </button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Starships
+      </button>
+    </div>                
+    <main>
+        <div class="film-card">
+            <img src="aaa" alt="Film 1 Poster">
+           
+                <!-- Add dropdown content here -->
+            
+        </div>
+        <div class="film-card">
+            <img class="film-poster" src="film1.jpg" alt="Film 1 Poster">
+            
+                <!-- Add dropdown content here -->
+            
+        </div>
+        <div class="film-card">
+            <img class="film-poster" src="film1.jpg" alt="Film 1 Poster">
+           
+                <!-- Add dropdown content here -->
+            
+        </div>
+        <div class="film-card">
+            <img class="film-poster" src="film1.jpg" alt="Film 1 Poster">
+            
+                <!-- Add dropdown content here -->
+            
+        </div>
+        <div class="film-card">
+            <img class="film-poster" src="film1.jpg" alt="Film 1 Poster">
+           
+                <!-- Add dropdown content here -->
+           
+        </div>
+        <div class="film-card">
+            <img class="film-poster" src="film1.jpg" alt="Film 1 Poster">
+            
+        </div>
+        
+        <!-- Add more film cards here -->
+    </main>
+</body>
+</html>

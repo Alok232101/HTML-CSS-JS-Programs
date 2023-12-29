@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            JavaScript Image Gallery</title>
+        <style>
+            #thumbnail-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .thumbnail {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                cursor: pointer;
+                margin: 5px;
+                border: 2px solid #ddd;
+            }
+            #full-image {
+                max-width: 100%;
+                max-height: 400px;
+                margin-top: 20px;
+            }
+            div.desc {
+                padding: 15px;
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="thumbnail-container"></div>
+        <div class="desc">Image</div>
+        
+        <img id="full-image" src="" alt="Full Image">
+
+        <script>
+            const images = ["AAA.png", "giphy.gif", "hgfc.png", "light-bulb.png"];
+
+            const thumbnailContainer = document.getElementById("thumbnail-container");
+            const fullImage = document.getElementById("full-image");
+
+            function displayFullImage(image) {
+                fullImage.src = image.src;
+            }
+
+            images.forEach((image, index) => {
+                const thumbnail = document.createElement("img");
+                thumbnail.src = image;
+                thumbnail.alt = `Thumbnail ${index + 1}`;
+                thumbnail
+                    .classList
+                    .add("thumbnail");
+                thumbnail.addEventListener("click", () => displayFullImage(thumbnail));
+                thumbnailContainer.appendChild(thumbnail);
+            });
+
+            displayFullImage(thumbnailContainer.firstElementChild);
+        </script>
+        <br>
+
+    </body>
+</html>

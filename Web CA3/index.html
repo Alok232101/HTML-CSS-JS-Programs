@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Mouse Click Event </title>
+<style>
+    #mouseevent {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+        }
+</style>
+</head>
+<body>
+    <div id="mouseevent"> Click Me!</div>
+    <script>
+    var box = document.getElementById('mouseevent');
+    function handleClick() 
+    {
+        box.style.backgroundColor = 'lightgreen';
+        box.innerHTML = 'Clicked!';
+    }
+    
+    box.addEventListener('click', handleClick);
+    </script>
+    
+</body>
+</html>

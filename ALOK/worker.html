@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Web worker counting numbers</p>
+    <p>Counting: <output id ="countM"></output></p>
+    <button onclick ="alertMessage()">Alert on</button>
+    <script>
+        function alertMessage()
+        {
+            alert("Web Worker is Running in Background");
+        }
+        var worker =new Worker("worker.js");
+        worker.onmessage = function(event)
+        {
+            document.getElementById("countM").innerHTML = event.data;
+        };
+    </script>
+</body>
+</html>

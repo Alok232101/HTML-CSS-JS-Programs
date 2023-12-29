@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple E-Commerce Website</title>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<style>
+		/* Set some global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f7f7f7;
+}
+
+/* Style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Style the main section */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+section {
+  flex: 1;
+  min-width: 300px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+li {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Style the aside */
+aside {
+  flex-basis: 300px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#cart-items {
+  margin: 0;
+  padding: 0;
+}
+
+#cart-items li {
+  margin-bottom: 0.5rem;
+}
+
+#cart-items li:last-child {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Style the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Simple E-Commerce Website</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Shop</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="products">
+			<h2>Shop</h2>
+			<ul>
+				<li>
+					<img src="product1.jpg" alt="Product 1">
+					<h3>Product 1</h3>
+					<p>$19.99</p>
+					<button onclick="addToCart('Product 1', 19.99)">Add to cart</button>
+				</li>
+				<li>
+					<img src="product2.jpg" alt="Product 2">
+					<h3>Product 2</h3>
+					<p>$29.99</p>
+					<button onclick="addToCart('Product 2', 29.99)">Add to cart</button>
+				</li>
+				<li>
+					<img src="product3.jpg" alt="Product 3">
+					<h3>Product 3</h3>
+					<p>$39.99</p>
+					<button onclick="addToCart('Product 3', 39.99)">Add to cart</button>
+				</li>
+			</ul>
+		</section>
+		<aside id="cart">
+			<h2>Cart</h2>
+			<ul id="cart-items">
+				<li>Product 1 - $19.99</li>
+				<li>Product 3 - $39.99</li>
+				<li>Total: $59.98</li>
+			</ul>
+			<button onclick="checkout()">Checkout</button>
+		</aside>
+	</main>
+	<footer>
+		<p>&copy; 2023 Simple E-Commerce Website</p>
+	</footer>
+	<script>
+		const cartItems = document.getElementById('cart-items');
+		let total = 59.98; // initialize total with the default cart total
+
+		function addToCart(productName, price) {
+			// add the new item to the cart
+			const newItem = document.createElement('li');
+			newItem.textContent = `${productName} - $${price}`;
+			cartItems.appendChild(newItem);
+
+			// update the total price
+			total += price;
+			const totalItem = document.createElement('li');
+			totalItem.textContent = `Total: $${total.toFixed(2)}`;
+			cartItems.replaceChild(totalItem, cartItems.lastChild);
+
+			// display a confirmation message
+			alert(`${productName} added to cart!`);
+		}
+
+		function checkout() {
+			alert(`Total: $${total.toFixed(2)}`);
+			// TODO: add code to redirect to checkout page
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Age Calculator</title>
+</head>
+<body>
+  <label for="birthdate">Enter your birthdate:</label>
+  <input type="date" id="birthdate">
+  <button onclick="calculateAge()">Calculate Age</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateAge() {
+      var birthdate = new Date(document.getElementById("birthdate").value);
+      var today = new Date();
+      var ageInMilliseconds = today - birthdate;
+      var ageInSeconds = ageInMilliseconds / 1000;
+      var ageInMinutes = ageInSeconds / 60;
+      var ageInHours = ageInMinutes / 60;
+      var ageInDays = ageInHours / 24;
+      var ageInMonths = ageInDays / 30.44; // average number of days in a month
+      var ageInYears = ageInMonths / 12;
+
+      var result = "You are " + ageInYears.toFixed(2) + " years old (" + Math.floor(ageInMonths) + " months and " + Math.floor(ageInDays) + " days).";
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

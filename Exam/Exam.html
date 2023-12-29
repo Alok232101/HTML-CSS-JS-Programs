@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        
+    </style>
+ 
+</head>
+<body>
+
+<div id="thumbnail-container"></div>
+<img id="full-image" src="" alt="Full Image">
+
+<script>
+  
+    const images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"];
+
+    
+    const thumbnailContainer = document.getElementById("thumbnail-container");
+    const fullImage = document.getElementById("full-image");
+
+
+    function displayFullImage(index) {
+        fullImage.src = images[index];
+    }
+
+    
+    images.forEach((image, index) => {
+        const thumbnail = document.createElement("img");
+        thumbnail.src = image;
+        thumbnail.alt = `Thumbnail ${index + 1}`;
+        thumbnail.classList.add("thumbnail");
+        thumbnail.addEventListener("click", () => displayFullImage(index));
+        thumbnailContainer.appendChild(thumbnail);
+    });
+
+    
+    displayFullImage(0);
+</script>
+
+</body>
+</html>

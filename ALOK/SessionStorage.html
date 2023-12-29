@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color:green;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 30px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if(typeof(Storage)!=="undefined")
+        {
+            sessionStorage.setItem("name","XYZ");
+            sessionStorage.setItem("City","pt. Deen dayal Upadhyaya Nagar");
+            document.write("Hi"+" "+sessionStorage.name+" "+"from"+" "+sessionStorage.City);
+        }
+        else
+        alert("sorry! your browser is not supporting the browser")
+    </script>
+</body>
+</html>
